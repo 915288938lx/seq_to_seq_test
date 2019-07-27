@@ -50,13 +50,13 @@ input_token_index = dict( #返回各个不重复输入单词的索引[(char1,0),
 target_token_index = dict( ##返回各个不重复目标单词的索引[(char1,0),(char2,1),(char3,2),(char4,3).......]
     [(char, i) for i, char in enumerate(target_characters)])
 
-encoder_input_data = np.zeros( #(输入序列组数,输入序列中最长的序列的单词数量, 所有输入序列中不重复单词数量)
+encoder_input_data = np.zeros( #<class 'tuple'>: (10000, 16, 70)(输入序列组数,输入序列中最长的序列的单词数量, 所有输入序列中不重复单词数量)
     (len(input_texts), max_encoder_seq_length, num_encoder_tokens),
     dtype='float32')
-decoder_input_data = np.zeros( #(输入序列组数,目标序列中最长的序列的单词数量, 所有目标序列中不重复单词数量)
+decoder_input_data = np.zeros( #<class 'tuple'>: (10000, 59, 93)(输入序列组数,目标序列中最长的序列的单词数量, 所有目标序列中不重复单词数量)
     (len(input_texts), max_decoder_seq_length, num_decoder_tokens),
     dtype='float32')
-decoder_target_data = np.zeros( #(输入序列组数,目标序列中最长的序列的单词数量, 所有目标序列中不重复单词数量)
+decoder_target_data = np.zeros( #<class 'tuple'>: (10000, 59, 93)(输入序列组数,目标序列中最长的序列的单词数量, 所有目标序列中不重复单词数量)
     (len(input_texts), max_decoder_seq_length, num_decoder_tokens),
     dtype='float32')
 
